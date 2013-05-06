@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="stylesheets/app.css" />
   <link rel="stylesheet" href="stylesheets/style.css" />
   <script src="javascripts/vendor/custom.modernizr.js"></script>
+  <script src="javascripts/vendor/raphael-min.js"></script>
+  <script src="javascripts/vendor/raphy-charts.min.js"></script>
 </head>
 
 <body>
@@ -94,23 +96,22 @@
 <!-- End Nav -->
 
 
-<!-- Widget Examples -->
+<!-- Stats -->
 <div class="row">
 	<div class="large-4 columns">
 		<div class="panel stats">
 			<div class="widget-title"><i class="icon-bar-chart"></i> <h6>Stats</h6></div>	
 
-				<div class="row">
-  					<div class="large-6 columns">
-  						<h2>2,234</h2>
-  						<span class="stats-type">Strawberries</span>
-  					</div>
-  					<div class="large-6 columns">
-  						<h2>452</h2>
-  						<span class="stats-type">Blackberries</span>
-  					</div>
-				</div>			
-			
+			<div class="row">
+  				<div class="large-6 columns">
+  					<h2>2,234</h2>
+  					<span class="stats-type">Strawberries</span>
+  				</div>
+  				<div class="large-6 columns">
+  					<h2>452</h2>
+  					<span class="stats-type">Blackberries</span>
+  				</div>
+			</div>			
 		</div>
 	</div>
 	
@@ -118,8 +119,16 @@
 		<div class="panel stats">
 			<div class="widget-title"><i class="icon-bar-chart"></i> <h6>Stats</h6></div>	
 
-			<h2>56</h2>	
-  			<span class="stats-type">Blackberries</span>
+			<div class="row">
+  				<div class="large-6 columns">
+  					<h2>2,234</h2>
+  					<span class="stats-type">Strawberries</span>
+  				</div>
+  				<div class="large-6 columns">
+  					<h2>452</h2>
+  					<span class="stats-type">Blackberries</span>
+  				</div>
+			</div>	
 		</div>	
 	</div>
 
@@ -127,13 +136,70 @@
 		<div class="panel stats">
 			<div class="widget-title"><i class="icon-bar-chart"></i> <h6>Stats</h6></div>	
 		
-			<h2>652</h2>
-  			<span class="stats-type">Blackberries</span>
-
+			<div class="row">
+  				<div class="large-6 columns">
+  					<h2>2,234</h2>
+  					<span class="stats-type">Strawberries</span>
+  				</div>
+  				<div class="large-6 columns">
+  					<h2>452</h2>
+  					<span class="stats-type">Blackberries</span>
+  				</div>
+			</div>	
 		</div>	
 	</div>
 </div>
-<!-- End Widget Examples -->
+<!-- End Stats -->
+
+
+<!-- Chart -->
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel">
+			<div class="widget-title"><i class="icon-signal"></i> <h6>Chart</h6></div>	
+
+			<div id="multiaxis" style="width: 955px; height: 300px;"></div>
+			
+			<script type="text/javascript">
+			  var multi_axis = new Charts.LineChart('multiaxis', {
+  			    show_grid: true,
+  			    show_y_labels: true,
+  			    label_max: false,
+  			    label_min: false,
+  			    multi_axis: false,
+  			    max_y_labels: 4,
+  			    x_padding: 45 
+			  });
+
+			  multi_axis.add_line({
+  			    data: [[1, 34],[2, 37],[3, 24],[4, 50],[5, 30],[6, 33],[7, 24]],
+  			    options: {
+                  line_color: "#00aadd",
+                  dot_color: "#00aadd",
+                  area_opacity: 0.2,
+                  dot_size: 7,
+                  line_width: 4 
+  				  }
+			  });
+
+			  multi_axis.add_line({
+                data: [[1, 35],[2, 36],[3, 37],[4, 20],[5, 25],[6, 33],[7, 44]],
+                options: {
+                  line_color: "#2bc500",
+                  dot_color: "#2bc500",
+                  fill_area: false,
+                  line_width: 4,
+                  dot_size: 5
+                }
+              });
+
+              multi_axis.draw()
+            </script>	
+           	    
+        </div>
+    </div>
+</div>
+<!-- End Chart -->
 
 
 <!-- Table Example -->
@@ -263,43 +329,30 @@
 </footer>
 
 
-  <script>
+<script>
   document.write('<script src=' +
   ('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
   '.js><\/script>')
-  </script>
+</script>
   
-  <script src="javascripts/foundation/foundation.js"></script>
-	
-	<script src="javascripts/foundation/foundation.alerts.js"></script>
-	
-	<script src="javascripts/foundation/foundation.clearing.js"></script>
-	
-	<script src="javascripts/foundation/foundation.cookie.js"></script>
-	
-	<script src="javascripts/foundation/foundation.dropdown.js"></script>
-	
-	<script src="javascripts/foundation/foundation.forms.js"></script>
-	
-	<script src="javascripts/foundation/foundation.joyride.js"></script>
-	
-	<script src="javascripts/foundation/foundation.magellan.js"></script>
-	
-	<script src="javascripts/foundation/foundation.orbit.js"></script>
-	
-	<script src="javascripts/foundation/foundation.placeholder.js"></script>
-	
-	<script src="javascripts/foundation/foundation.reveal.js"></script>
-	
-	<script src="javascripts/foundation/foundation.section.js"></script>
-	
-	<script src="javascripts/foundation/foundation.tooltips.js"></script>
-	
-	<script src="javascripts/foundation/foundation.topbar.js"></script>
-	
+<script src="javascripts/foundation/foundation.js"></script>
+<script src="javascripts/foundation/foundation.alerts.js"></script>
+<script src="javascripts/foundation/foundation.clearing.js"></script>
+<script src="javascripts/foundation/foundation.cookie.js"></script>
+<script src="javascripts/foundation/foundation.dropdown.js"></script>
+<script src="javascripts/foundation/foundation.forms.js"></script>
+<script src="javascripts/foundation/foundation.joyride.js"></script>
+<script src="javascripts/foundation/foundation.magellan.js"></script>
+<script src="javascripts/foundation/foundation.orbit.js"></script>
+<script src="javascripts/foundation/foundation.placeholder.js"></script>
+<script src="javascripts/foundation/foundation.reveal.js"></script>
+<script src="javascripts/foundation/foundation.section.js"></script>
+<script src="javascripts/foundation/foundation.tooltips.js"></script>
+<script src="javascripts/foundation/foundation.topbar.js"></script>
   
-  <script>
-    $(document).foundation();
-  </script>
+<script>
+  $(document).foundation();
+</script>
+  
 </body>
 </html>
