@@ -282,7 +282,23 @@
 	<div class="large-4 columns">
 		<div class="panel">
 			<div class="widget-title"><h6>Widget Title</h6></div>	
-		
+
+            <div id='goal' style='width: 260px; height: 240px;'></div>
+            <script type="text/javascript">
+            var goal = new Charts.CircleProgress(
+              'goal', 
+              'Goal', 
+              80,
+                {
+                  font_color: "#fff",
+                  fill_color: "#222",
+                  label_color: "#333",
+                  text_shadow: "rgba(0,0,0,.4)",
+                  stroke_color: "#6a329e"
+                });
+
+              goal.draw()
+            </script>		
 		</div>	
 	</div>
 </div>
